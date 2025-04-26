@@ -10,10 +10,15 @@ def home():
 
 @app.route("/meme", methods=["POST"])
 def get_meme():
-    data = request.get_json()
-    text = data.get("text")
+    if request.is_json:
+        data = request.get_json()
+        text = data.get("text", "")
 
-    return jsonify({"text_received": text, "meme_url": "https://imgur.com/b6wGgOg.jpg"})
+        return jsonify(
+            {"text_received": text, "meme_url": "https://imgur.com/b6wGgOg.jpg"}
+        )
+    else:
+        return jsonify({"error": "Request must be JSON"}), 400
 
 
 if __name__ == "__main__":

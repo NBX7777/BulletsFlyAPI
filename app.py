@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 # 關鍵字 -> 對應多張圖片
 meme_map = {
-    "噁心": ["https://imgur.com/a/rA0M9y0"],
+    "噁心": ["https://i.imgur.com/b6wGgOg.png"],
     "翻譯翻譯": ["https://imgur.com/a/vREicB4"],
     "公平": ["https://imgur.com/h4af9O4"],
 }
